@@ -1,0 +1,20 @@
+{
+  "name": "menberg/contact-persons",
+  "description": "Kontaktpersoner med block och mallar för WordPress-projekt.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=8.1",
+    "composer/installers": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "menberg\\OthemeContacts\\": "src/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  }
+}
