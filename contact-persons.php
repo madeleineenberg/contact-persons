@@ -13,7 +13,7 @@
 
 declare(strict_types=1);
 
-namespace menberg\ContactPersons;
+namespace MEnberg\ContactPersons;
 
 defined('ABSPATH') || exit;
 

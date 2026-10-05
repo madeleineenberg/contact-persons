@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace menberg\ContactPersons;
+namespace MEnberg\ContactPersons;
 
 final class Plugin
 {
@@ -24,6 +24,8 @@ final class Plugin
 
         add_action('init', [$this, 'loadTextdomain']);
         do_action('contact_persons/booted', $this);
+        (new PersonTypes())->register();
+
     }
 
     public function loadTextDomain(): void
@@ -35,3 +37,10 @@ final class Plugin
         );
     }
 }
+
+register_activation_hook(__FILE__, static function (): void {
+    (new PersonTypes())->registerAll();
+    flush_rewrite_rules();
+});
+
+register_deactivation_hook(__FILE__, 'flush_rewrite_rules');
